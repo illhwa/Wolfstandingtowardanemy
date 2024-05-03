@@ -1,0 +1,37 @@
+<meta charset="utf-8">
+<title>애니메이션</title>
+<style>
+@keyframes textColorAnimation {
+	0% { color : red; }
+	15% { color : orange; } 
+	30% { color : yellow; }
+	45% { color : green; }
+	60% { color : blue; }
+	75% { color : darkblue; }
+	100% { color : purple; }
+
+}
+span {
+	animation-name : textColorAnimation; 
+	animation-duration : 7s;
+	animation-iteration-count : infinite; 
+}
+@keyframes bomb {
+	from {  font-size : 100%;}
+	to { font-size : 700%;}
+}
+h3 {
+	animation-name : bomb;
+	animation-duration : 7s;
+	animation-iteration-count : infinite;
+}
+
+</style></head>
+<body>
+<h3><span>소프트웨어학과 화이팅!</span></h3>
+<hr>
+<p>이름이 3초동안 500%에서 시작하여 
+100%로 바뀌는 애니메이션입니다. 
+무한 반복합니다.</p>
+</body>
+</html>
