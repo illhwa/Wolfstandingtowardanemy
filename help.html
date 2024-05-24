@@ -26,19 +26,35 @@
         </div>
     </header>
 
-    <div class="help-container">
-        <h1>도움말</h1>
-        <p><h2>여기에서 자주 묻는 질문과 답변을 확인할 수 있습니다</h2></p>
-        <hr>
-        <ul class="help-info">
-            <li>Q1: 이 사이트는 무엇을 하나요?</li>
-            <p>A1: 이 사이트는 당신의 소중한 순간들을 기록하고 공유할 수 있는 플랫폼입니다.</p>
-            <li>Q2: 어떻게 회원가입을 하나요?</li>
-            <p>A2: 홈페이지 상단의 회원가입 버튼을 클릭하고, 필요한 정보를 입력하면 쉽게 회원가입을 할 수 있습니다.</p>
-            <li>Q3: 비밀번호를 잊어버렸어요. 어떻게 해야 하나요?</li>
-            <p>A3: 로그인 페이지에서 "비밀번호 찾기" 링크를 클릭하고, 지시에 따라 이메일을 통해 비밀번호를 재설정하세요.</p>
-            <!-- 추가적인 Q&A 항목을 여기서 추가할 수 있습니다. -->
-        </ul>
+    <div class="main-container">
+        <div class="sidebar">
+            <h2>도움말</h2>
+            <ul>
+                <li><a href="#" class="help-link" data-content="login">로그인 관련 문제</a></li>
+                <li><a href="#" class="help-link" data-content="calendar">달력 기능</a></li>
+                <!-- 추가 항목을 여기에 추가할 수 있습니다 -->
+            </ul>
+        </div>
+
+        <div class="help-content" id="help-content">
+            <h1>도움말</h1>
+            <p><h2>여기에서 자주 묻는 질문과 답변을 확인할 수 있습니다</h2></p>
+            <hr>
+            <div id="login" class="content-section">
+                <ul class="help-info">
+                    <li>Q1: 비밀번호를 잊어버렸어요. 어떻게 해야 하나요?</li>
+                    <p>A1: 로그인 페이지에서 "비밀번호 찾기" 링크를 클릭하고, 지시에 따라 이메일을 통해 비밀번호를 재설정하세요.</p>
+                    <!-- 로그인 관련 추가 Q&A 항목을 여기서 추가할 수 있습니다. -->
+                </ul>
+            </div>
+            <div id="calendar" class="content-section" style="display: none;">
+                <ul class="help-info">
+                    <li>Q1: 달력에 이벤트를 추가하는 방법은 무엇인가요?</li>
+                    <p>A1: 달력 페이지에서 "이벤트 추가" 버튼을 클릭하고, 필요한 정보를 입력하면 새로운 이벤트를 추가할 수 있습니다.</p>
+                    <!-- 달력 기능 관련 추가 Q&A 항목을 여기서 추가할 수 있습니다. -->
+                </ul>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -55,5 +71,17 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('.help-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                document.getElementById(this.dataset.content).style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>
